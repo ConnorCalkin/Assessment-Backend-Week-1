@@ -107,7 +107,7 @@ def history():
             }, 400
 
         return app_history[::-1][:number], 200
-    elif request.method == "DELETE":
+    if request.method == "DELETE":
         clear_history()
         return {
             "status": "History cleared"
