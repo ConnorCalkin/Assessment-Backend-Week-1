@@ -12,11 +12,15 @@ def convert_to_datetime(date_val: str) -> datetime:
 
 
 def get_days_between(first: datetime, last: datetime) -> int:
+    if isinstance(first, datetime) is False or isinstance(last, datetime) is False:
+        raise TypeError("Datetimes required.")
     return (last - first).days
 
 
 def get_day_of_week_on(date_val: datetime) -> str:
-    pass
+    if isinstance(date_val, datetime) is False:
+        raise TypeError("Datetime required.")
+    return date_val.strftime('%A')
 
 
 def get_current_age(birthdate: date) -> int:
