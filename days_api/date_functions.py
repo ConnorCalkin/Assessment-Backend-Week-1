@@ -12,18 +12,21 @@ def convert_to_datetime(date_val: str) -> datetime:
 
 
 def get_days_between(first: datetime, last: datetime) -> int:
+    '''gets number of days between the two dates'''
     if isinstance(first, datetime) is False or isinstance(last, datetime) is False:
         raise TypeError("Datetimes required.")
     return (last - first).days
 
 
 def get_day_of_week_on(date_val: datetime) -> str:
+    '''gets the weekday of the inputted date'''
     if isinstance(date_val, datetime) is False:
         raise TypeError("Datetime required.")
     return date_val.strftime('%A')
 
 
 def get_current_age(birthdate: date) -> int:
+    '''gets the current age of someone born on birthdate'''
     if isinstance(birthdate, date) is False:
         raise TypeError("Date required.")
 
@@ -34,5 +37,5 @@ def get_current_age(birthdate: date) -> int:
     passed_birthday = (today - this_year_birthday) >= timedelta()
     if passed_birthday:
         return today.year - birthdate.year
-    else:
-        return today.year - birthdate.year - 1
+
+    return today.year - birthdate.year - 1

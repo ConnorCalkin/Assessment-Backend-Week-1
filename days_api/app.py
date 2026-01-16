@@ -2,9 +2,9 @@
 
 # pylint: disable = no-name-in-module
 
-from datetime import datetime, date
+from datetime import datetime
 
-from flask import Flask, Response, request, jsonify
+from flask import Flask, request, jsonify
 
 from date_functions import (convert_to_datetime, get_day_of_week_on,
                             get_days_between, get_current_age)
@@ -36,6 +36,10 @@ def index():
 
 @app.route("/between", methods=["POST"])
 def between():
+    '''
+    when recieving a post request,
+      returns days between first and last dates
+    '''
     add_to_history(request)
     json = request.json
 
@@ -59,6 +63,9 @@ def between():
 
 @app.route("/weekday", methods=["POST"])
 def weekday():
+    '''
+    When receiving a post, returns day of the week of date
+    '''
     add_to_history(request)
     json = request.json
 
@@ -68,19 +75,23 @@ def weekday():
         }, 400
 
     try:
-        date = convert_to_datetime(json["date"])
-    except:
+        input_date = convert_to_datetime(json["date"])
+    except ValueError:
         return {
             "error": "Unable to convert value to datetime."
         }, 400
 
     return {
-        "weekday": get_day_of_week_on(date)
+        "weekday": get_day_of_week_on(input_date)
     }
 
 
 @app.route("/history", methods=["GET", "DELETE"])
 def history():
+    '''
+    When receiving a get returns history list
+    When receiving a delete clears the cache and returns confirmation
+    '''
     add_to_history(request)
     if request.method == "GET":
         try:
@@ -105,15 +116,18 @@ def history():
 
 @app.route("/current_age", methods=["GET"])
 def current_age():
+    '''
+    When receiving a get, returns current age of someone born at date
+    '''
     add_to_history(request)
-    date = request.args.get('date')
-    if date is None:
+    birthdate = request.args.get('date')
+    if birthdate is None:
         return {
             "error": "Date parameter is required."
         }, 400
 
     try:
-        age = get_current_age(date)
+        age = get_current_age(birthdate)
     except TypeError:
         return {
             "error": "Value for data parameter is invalid."
