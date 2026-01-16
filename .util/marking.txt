@@ -5,9 +5,9 @@ collected 112 items
 
 days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py FFF........FFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
+days_api/test_date_functions.py FFF......................FFFFFFFFFFFFFF  [100%]
 
-======================== 104 failed, 8 passed in 0.34s =========================
+======================== 90 failed, 22 passed in 0.32s =========================
 ************* Module app
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
@@ -18,11 +18,10 @@ days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
 days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:23: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:22:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:22:20: W0613: Unused argument 'birthdate' (unused-argument)
+days_api/date_functions.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/date_functions.py:26:20: W0613: Unused argument 'birthdate' (unused-argument)
 
 -----------------------------------
-Your code has been rated at 5.56/10
+Your code has been rated at 6.45/10
 
