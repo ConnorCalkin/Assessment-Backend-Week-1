@@ -19,7 +19,7 @@ jobs:
       - name: Install Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'
+          python-version: '3.14'
       # Install required packages
       - name: Install packages
         run: |
