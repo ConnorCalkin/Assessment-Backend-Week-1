@@ -57,6 +57,28 @@ def post_between():
     }, 200
 
 
+@app.route("/weekday", methods=["POST"])
+def post_weekday():
+    add_to_history(request)
+    json = request.json
+
+    if "date" not in json:
+        return {
+            "error": "Missing required data."
+        }, 400
+
+    try:
+        date = convert_to_datetime(json["date"])
+    except:
+        return {
+            "error": "Unable to convert value to datetime."
+        }, 400
+
+    return {
+        "weekday": get_day_of_week_on(date)
+    }
+
+
 if __name__ == "__main__":
     app.config['TESTING'] = True
     app.config['DEBUG'] = True
