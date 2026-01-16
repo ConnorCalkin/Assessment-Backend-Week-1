@@ -1,6 +1,6 @@
 """Functions for working with dates."""
 
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 
 
 def convert_to_datetime(date_val: str) -> datetime:
@@ -24,4 +24,15 @@ def get_day_of_week_on(date_val: datetime) -> str:
 
 
 def get_current_age(birthdate: date) -> int:
-    pass
+    if isinstance(birthdate, date) is False:
+        raise TypeError("Date required.")
+
+    today = date.today()
+    this_year_birthday = date(today.year,
+                              birthdate.month,
+                              birthdate.day)
+    passed_birthday = (today - this_year_birthday) >= timedelta()
+    if passed_birthday:
+        return today.year - birthdate.year
+    else:
+        return today.year - birthdate.year - 1
