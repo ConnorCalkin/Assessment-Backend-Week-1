@@ -7,25 +7,11 @@ days_api/test_api.py ............FFFFFFFFF..F..........FFFFFFF.......... [ 45%]
 ......................                                                   [ 65%]
 days_api/test_date_functions.py FFF....................................  [100%]
 
-======================== 20 failed, 92 passed in 0.31s =========================
+======================== 20 failed, 92 passed in 0.28s =========================
 ************* Module app
-days_api/app.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:71:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
-days_api/app.py:72:4: W0702: No exception type(s) specified (bare-except)
-days_api/app.py:83:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:85:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-days_api/app.py:83:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
-days_api/app.py:107:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:109:4: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
-days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
-days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-************* Module date_functions
-days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:35:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+days_api/app.py:96:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+days_api/app.py:90:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 
 -----------------------------------
-Your code has been rated at 8.24/10
+Your code has been rated at 9.76/10
 
