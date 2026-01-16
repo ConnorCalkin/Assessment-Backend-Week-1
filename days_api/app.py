@@ -22,6 +22,7 @@ def add_to_history(current_request):
         "route": current_request.endpoint
     })
 
+
 def clear_history():
     """Clears the app history."""
     app_history.clear()
@@ -31,6 +32,29 @@ def clear_history():
 def index():
     """Returns an API welcome messsage."""
     return jsonify({"message": "Welcome to the Days API."})
+
+
+@app.route("/between", methods=["POST"])
+def post_between():
+    add_to_history(request)
+    json = request.json
+
+    if "first" not in json or "last" not in json:
+        return {
+            "error": "Missing required data."
+        }, 400
+
+    try:
+        first = convert_to_datetime(json["first"])
+        last = convert_to_datetime(json["last"])
+    except ValueError:
+        return {
+            "error": "Unable to convert value to datetime."
+        }, 400
+
+    return {
+        "days": get_days_between(first, last)
+    }, 200
 
 
 if __name__ == "__main__":
