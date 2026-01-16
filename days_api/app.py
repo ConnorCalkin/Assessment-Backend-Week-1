@@ -103,6 +103,27 @@ def history():
         }, 200
 
 
+@app.route("/current_age", methods=["GET"])
+def current_age():
+    add_to_history(request)
+    date = request.args.get('date')
+    if date is None:
+        return {
+            "error": "Date parameter is required."
+        }, 400
+
+    try:
+        age = get_current_age(date)
+    except TypeError:
+        return {
+            "error": "Value for data parameter is invalid."
+        }, 400
+
+    return {
+        "current_age": age
+    }, 200
+
+
 if __name__ == "__main__":
     app.config['TESTING'] = True
     app.config['DEBUG'] = True
