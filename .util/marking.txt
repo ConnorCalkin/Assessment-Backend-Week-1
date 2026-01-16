@@ -3,16 +3,18 @@ platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
-days_api/test_api.py ............FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
+days_api/test_api.py ............FFFFFFFFF..F..........FFFFFFF.FFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
 days_api/test_date_functions.py FFF....................................  [100%]
 
-======================== 64 failed, 48 passed in 0.32s =========================
+======================== 51 failed, 61 passed in 0.32s =========================
 ************* Module app
 days_api/app.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:71:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
+days_api/app.py:72:4: W0702: No exception type(s) specified (bare-except)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
 days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -21,5 +23,5 @@ days_api/date_functions.py:26:0: C0116: Missing function or method docstring (mi
 days_api/date_functions.py:35:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
 
 -----------------------------------
-Your code has been rated at 8.16/10
+Your code has been rated at 8.14/10
 
